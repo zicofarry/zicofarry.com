@@ -1,9 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-zico-dark text-white selection:bg-zico-primary selection:text-white;
+    overflow-x: hidden;
+}
+
+/* Pattern Grid ala Dinamik */
+.bg-grid-pattern {
+    background-size: 50px 50px;
+    background-image: linear-gradient(to right, rgba(168, 85, 247, 0.05) 1px, transparent 1px),
+                      linear-gradient(to bottom, rgba(168, 85, 247, 0.05) 1px, transparent 1px);
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    @apply bg-zico-dark;
+}
+::-webkit-scrollbar-thumb {
+    @apply bg-zico-primary/30 rounded-full hover:bg-zico-primary/50 transition-colors;
 }
