@@ -2,9 +2,40 @@ export const personalInfo = {
     name: "zicofarry",
     role: "Computer Science Student",
     university: "Universitas Pendidikan Indonesia",
-    about: "I am an undergraduate student majoring in Computer Science at Universitas Pendidikan Indonesia. I have a great interest in programming, especially in the fields of Web Development and Cyber Security (CTF). I am a person who is easy to adapt to a new environment and can work well individually or in a team.",
+    shortBio: "Transforming complex problems into secure, elegant web solutions. I blend modern web development with a security-first mindset to build applications that are robust and user-centric.",
+    about: "I'm a college student currently in my 3rd semester, majoring in Computer Science. I specialize in cryptography but I'm also deeply into low-level programming (reverse engineering). I enjoy writing code that is clean, minimal, and efficient—code that's easy to maintain and flexible. Always looking to grow in software architecture, AI, and machine learning. I love working in driven, collaborative teams committed to building something meaningful.",
     email: "mhmmdzmslm36@gmail.com",
     cvLink: "#" // Masukkan link CV jika ada
+};
+
+export const skills = {
+    confident: [
+        // Yang ada sertifikatnya
+        { name: "C Language", cert: "https://www.hackerrank.com/certificates/iframe/cc2cf7caa607" },
+        { name: "C++", cert: "https://www.hackerrank.com/certificates/iframe/cc2cf7caa607" },
+        { name: "Python", cert: "https://www.hackerrank.com/certificates/iframe/2e54b1ee8257" },
+        { name: "MySQL", cert: "https://www.hackerrank.com/certificates/iframe/40a329fe72e1" },
+        
+        // Yang belum ada sertifikat (dari badge shield.io kamu)
+        { name: "Java", cert: null },
+        { name: "PHP", cert: null },
+        { name: "Laravel", cert: null },
+        { name: "JavaScript", cert: null },
+        { name: "Node.js", cert: null },
+        { name: "Fastify", cert: null },
+        { name: "FastAPI", cert: null },
+        { name: "React", cert: null },
+        { name: "Vue.js", cert: null },
+        { name: "Nuxt.js", cert: null },
+        { name: "PostgreSQL", cert: null },
+        { name: "Git", cert: null },
+    ],
+    exploring: [
+        "Object Oriented Programming",
+        "Artificial Intelligence",
+        "Cyber Security (Cryptography)",
+        "Mobile Programming"
+    ]
 };
 
 export const awards = [
@@ -47,37 +78,40 @@ export const projects = [
         tech: ["React", "Python", "FastAPI", "Tailwind"],
         image: "/img/gymai-cover.jpg",
         link: "https://gymai.zicofarry.com",
-        demo: "https://youtube.com/..."
+        demo: "https://youtu.be/cQY0GuRAdeM"
     },
     {
         id: 3,
-        title: "PilahPintar",
-        type: "Desktop App",
-        desc: "Aplikasi edukasi pemilahan sampah dengan elemen gamifikasi (Java GUI).",
-        tech: ["Java", "Swing", "OOP"],
+        title: "PilahPintar (DBMS)",
+        type: "Database Management System",
+        desc: "Aplikasi manajemen bank sampah terintegrasi database. Fitur mencakup pencatatan setoran sampah, pengelolaan nasabah, konversi poin, dan laporan statistik otomatis.",
+        tech: ["PHP Native", "MySQL", "Javascript", "CSS"],
         image: "/img/pilahpintar.jpg",
-        link: "https://https://github.com/zicofarry/DBMS-PilahPintar",
+        link: "https://github.com/zicofarry/DBMS-PilahPintar", // Ini link Repo
+        repo: true, // Marker bahwa ini link repo, bukan live site
         demo: null
     },
     {
         id: 4,
-        title: "BrainRot Game",
-        type: "Game Dev",
-        desc: "Game ketangkasan sederhana untuk menguji refleks dan logika game loop.",
-        tech: ["Java", "Game Logic"],
+        title: "Brainrot Programming Language",
+        type: "Compiler Design",
+        desc: "Bahasa pemrograman esoterik kustom berbasis C. Memiliki lexer, parser, dan interpreter sendiri dengan sintaks unik (slang). Mendukung operasi aritmatika, loop, dan logic.",
+        tech: ["C Language", "Compiler Design", "Lexer/Parser"],
         image: "/img/brainrot.jpg",
-        link: "https://github.com/zicofarry/brainrot",
+        link: "https://github.com/zicofarry/brainrot-programming-language", // Link Repo
+        repo: true,
         demo: null
     },
     {
         id: 5,
-        title: "Sistem Perpustakaan",
-        type: "DBMS Project",
-        desc: "Manajemen data perpustakaan (DBMS) mencakup sirkulasi buku dan anggota.",
-        tech: ["PHP", "Native", "MySQL"],
-        image: "/img/dbms.jpg",
-        link: null,
-        demo: null
+        title: "Judge System",
+        type: "Console App",
+        desc: "Sistem simulasi 'Hakim' berbasis CLI (Command Line Interface). Menganalisis input kasus kriminal dan menentukan vonis hukuman berdasarkan logika hukum yang kompleks.",
+        tech: ["C Language", "Data Structure", "File Handling", "Sequential Files", "DBMS"],
+        image: "/img/dbms.jpg", // Pastikan gambarnya sesuai (mungkin screenshot terminal?)
+        link: "https://github.com/zicofarry/TMD-DASPROG24", // Link Repo
+        repo: true,
+        demo: "https://youtu.be/MmtzXXVA5gg?si=RbyEfap8_KtAqsnU" // Ada demonya
     }
 ];
 
