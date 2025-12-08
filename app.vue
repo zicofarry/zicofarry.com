@@ -9,11 +9,15 @@ import {
   PlayCircleIcon,
   CommandLineIcon
 } from '@heroicons/vue/24/outline'
+import favicon from '@/assets/zico.svg'
 
 useHead({
   title: 'zicofarry - Portfolio',
   meta: [
     { name: 'description', content: personalInfo.about }
+  ],
+  link: [
+    { rel: 'icon', type: 'image/svg+xml', href: favicon }
   ]
 })
 </script>
