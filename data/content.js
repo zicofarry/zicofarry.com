@@ -82,9 +82,44 @@ export const projects = [
 ];
 
 export const contacts = [
-    { name: "GitHub", url: "https://github.com/zicofarry", icon: "github" },
-    { name: "LinkedIn", url: "https://www.linkedin.com/in/muhammad-azmi-salam-490356247", icon: "linkedin" },
-    { name: "Instagram", url: "https://instagram.com/zicofarry", icon: "instagram" },
-    { name: "CodeForces", url: "https://codeforces.com/profile/zicofarry", icon: "code" }, // Icon placeholder
-    { name: "HackTheBox", url: "https://ctf.hackthebox.com/user/profile/780323", icon: "box" }
+    { 
+        name: "LinkedIn", 
+        url: "https://www.linkedin.com/in/zicofarry/", 
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" 
+    },
+    { 
+        name: "GitHub", 
+        url: "https://github.com/zicofarry", 
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" 
+    },
+    { 
+        name: "Spotify", 
+        url: "https://open.spotify.com/user/username_kamu", // Ganti dengan link spotify profil kamu yang benar
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/spotify.svg" 
+    },
+    { 
+        name: "SoundCloud", 
+        url: "https://soundcloud.com/muhammad-azmi-salam", 
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/soundcloud.svg" 
+    },
+    { 
+        name: "CodeForces", 
+        url: "https://codeforces.com/profile/zicofarry/", 
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/codeforces.svg" 
+    },
+    { 
+        name: "HackerRank", 
+        url: "https://www.hackerrank.com/profile/mhmmdzmslm36", 
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/hackerrank.svg" 
+    },
+    { 
+        name: "HackTheBox", 
+        url: "https://ctf.hackthebox.com/user/profile/780323", 
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/hackthebox.svg" 
+    },
+    { 
+        name: "Email", 
+        url: "mailto:mhmmdzmslm36@gmail.com", 
+        icon: "https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" 
+    }
 ];

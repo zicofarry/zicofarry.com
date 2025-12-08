@@ -9,7 +9,7 @@ import {
 } from '@heroicons/vue/24/outline'
 
 useHead({
-  title: 'Zico Farry - Portfolio',
+  title: 'zicofarry - Portfolio',
   meta: [
     { name: 'description', content: personalInfo.about }
   ]
@@ -28,7 +28,7 @@ useHead({
     <nav class="fixed top-0 inset-x-0 z-50 border-b border-white/5 bg-zico-dark/80 backdrop-blur-md">
       <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div class="font-heading font-bold text-xl tracking-tight">
-          Zico<span class="text-zico-primary">Farry</span>
+          zico<span class="text-zico-primary">farry</span>
         </div>
         <div class="hidden md:flex gap-6 text-sm font-medium text-gray-400">
           <a href="#about" class="hover:text-zico-primary transition-colors">About</a>
@@ -89,8 +89,8 @@ useHead({
                    <TrophyIcon class="w-6 h-6 text-zico-primary" />
                  </div>
                  <div>
-                   <div class="text-xs text-gray-400">Achievement</div>
-                   <div class="font-bold text-white">GEMASTIK Finalist</div>
+                   <div class="text-xs text-gray-400">zicofarry</div>
+                   <div class="font-bold text-white">Muhammad 'Azmi Salam</div>
                  </div>
                </div>
              </div>
@@ -164,23 +164,29 @@ useHead({
         </section>
 
         <section id="contact" class="text-center py-20">
-           <div class="bg-gradient-to-br from-zico-primary/10 to-zico-secondary/10 rounded-3xl p-10 border border-white/10 relative overflow-hidden">
+           <div class="bg-gradient-to-br from-zico-primary/5 to-zico-secondary/5 rounded-3xl p-8 md:p-12 border border-white/10 relative overflow-hidden backdrop-blur-sm">
+              <div class="absolute top-0 right-0 w-64 h-64 bg-zico-primary/10 rounded-full blur-[80px] -z-10"></div>
+              
               <div class="relative z-10">
                  <h2 class="text-3xl md:text-5xl font-heading font-bold mb-6">Let's <span class="text-zico-primary">Connect!</span></h2>
-                 <p class="text-gray-400 max-w-2xl mx-auto mb-10">
-                    Feel free to reach out for collaborations or just a friendly hello.
+                 <p class="text-gray-400 max-w-2xl mx-auto mb-10 text-lg">
+                    Feel free to reach out or connect with me on these platforms.
                  </p>
                  
-                 <div class="flex flex-wrap justify-center gap-4">
+                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
                     <a 
                       v-for="contact in contacts" 
                       :key="contact.name" 
                       :href="contact.url"
                       target="_blank"
-                      class="flex items-center gap-2 px-6 py-3 rounded-full bg-zico-dark border border-white/10 hover:border-zico-primary hover:text-zico-primary transition-all group"
+                      class="flex flex-col md:flex-row items-center justify-center gap-3 px-4 py-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-zico-primary/50 hover:scale-[1.02] transition-all duration-300 group"
                     >
-                       <span>{{ contact.name }}</span>
-                       <ArrowTopRightOnSquareIcon class="w-4 h-4 group-hover:translate-x-1 transition-transform"/>
+                       <img 
+                         :src="contact.icon" 
+                         :alt="contact.name" 
+                         class="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity invert" 
+                       />
+                       <span class="font-medium text-gray-300 group-hover:text-white">{{ contact.name }}</span>
                     </a>
                  </div>
               </div>
