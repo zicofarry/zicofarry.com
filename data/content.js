@@ -68,7 +68,7 @@ export const projects = [
         tech: ["Vue.js", "Tailwind", "Fastify", "PostgreSQL"],
         image: "/img/cattake-cover.jpg", 
         link: "https://cattake.zicofarry.com",
-        demo: "https://youtube.com/..." 
+        demo: "https://youtu.be/zwF_WMXUnz4?si=ZLAl3U5QlzPmvJgI" 
     },
     {
         id: 2,
@@ -78,7 +78,7 @@ export const projects = [
         tech: ["React", "Python", "FastAPI", "Tailwind"],
         image: "/img/gymai-cover.jpg",
         link: "https://gymai.zicofarry.com",
-        demo: "https://youtu.be/cQY0GuRAdeM"
+        demo: "https://youtu.be/cQY0GuRAdeM?si=jiffYjeJV3DqEWiZ"
     },
     {
         id: 3,
@@ -88,8 +88,7 @@ export const projects = [
         tech: ["PHP Native", "MySQL", "Javascript", "CSS"],
         image: "/img/pilahpintar.jpg",
         link: "https://github.com/zicofarry/DBMS-PilahPintar", // Ini link Repo
-        repo: true, // Marker bahwa ini link repo, bukan live site
-        demo: null
+        demo: "https://youtu.be/I3xi1KbXXk0?si=riKHZGMUjWy2QKu2"
     },
     {
         id: 4,
@@ -100,7 +99,7 @@ export const projects = [
         image: "/img/brainrot.jpg",
         link: "https://github.com/zicofarry/brainrot-programming-language", // Link Repo
         repo: true,
-        demo: null
+        demo: "https://youtu.be/5HfxV9UaTvk?si=Hp7B3flDi1cXfML-"
     },
     {
         id: 5,
