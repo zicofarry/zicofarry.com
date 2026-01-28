@@ -4,11 +4,11 @@ import { TrophyIcon } from '@heroicons/vue/24/outline'
 </script>
 
 <template>
-  <section id="home" class="py-10 md:py-20 scroll-mt-32 relative">
+  <section id="home" class="py-4 md:py-20 scroll-mt-32 relative min-h-0 md:min-h-[70vh]">
     
-    <div class="grid lg:grid-cols-2 gap-12 items-center w-full">
+    <div class="grid lg:grid-cols-2 gap-6 md:gap-12 items-center w-full">
       
-      <div v-motion-slide-visible-bottom class="space-y-8">
+      <div v-motion-slide-visible-bottom class="space-y-4 md:space-y-8">
         
         <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zico-primary/10 border border-zico-primary/20 text-zico-primary text-xs font-bold tracking-wide uppercase">
           <span class="relative flex h-2 w-2">
@@ -18,20 +18,20 @@ import { TrophyIcon } from '@heroicons/vue/24/outline'
           Available for Hire
         </div>
 
-        <h1 class="font-heading text-5xl md:text-7xl font-extrabold leading-tight">
-          Empowering Future <br />
+        <h1 class="font-heading text-2xl sm:text-3xl md:text-5xl lg:text-7xl font-extrabold leading-tight">
+          Empowering Future <br class="hidden sm:block" />
           with <span class="bg-gradient-to-r from-zico-primary via-white to-zico-primary bg-[length:200%_auto] bg-clip-text text-transparent animate-gradient">Code & Security</span>
         </h1>
 
-        <p class="text-lg text-gray-400 leading-relaxed max-w-xl border-l-4 border-zico-primary/50 pl-6">
+        <p class="text-sm md:text-lg text-gray-400 leading-relaxed max-w-xl border-l-4 border-zico-primary/50 pl-3 md:pl-6">
           {{ personalInfo.shortBio }}
         </p>
 
-        <div class="flex flex-wrap gap-4 pt-2">
-          <a href="#projects" class="px-8 py-4 bg-zico-primary hover:bg-zico-accent text-white font-bold rounded-full transition-all shadow-lg shadow-zico-primary/25 hover:shadow-zico-primary/40 hover:-translate-y-1">
+        <div class="flex flex-wrap gap-2 md:gap-4 pt-1 md:pt-2">
+          <a href="#projects" class="px-5 md:px-8 py-2.5 md:py-4 bg-zico-primary hover:bg-zico-accent text-white font-bold rounded-full transition-all shadow-lg shadow-zico-primary/25 hover:shadow-zico-primary/40 hover:-translate-y-1 text-xs md:text-base">
             Explore Projects
           </a>
-          <a href="#contact" class="px-8 py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-full transition-all backdrop-blur-sm">
+          <a href="#contact" class="px-5 md:px-8 py-2.5 md:py-4 bg-white/5 hover:bg-white/10 border border-white/10 text-white font-bold rounded-full transition-all backdrop-blur-sm text-xs md:text-base">
             Contact Me
           </a>
         </div>

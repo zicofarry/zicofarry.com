@@ -1,7 +1,8 @@
 <script setup>
 import { GlobeAltIcon, VideoCameraIcon, ArrowRightIcon } from '@heroicons/vue/24/outline'
+import { getTechIcon } from '../data/techIcons.js'
 
-// Menerima data 'project' dari parent
+// Receive 'project' data from parent
 defineProps({
   project: {
     type: Object,
@@ -49,13 +50,27 @@ defineProps({
         {{ project.desc }}
       </p>
       
+      <!-- Tech Stack with Icons -->
       <div class="flex flex-wrap gap-2">
         <span 
-          v-for="t in project.tech" 
+          v-for="t in project.tech.slice(0, 4)" 
           :key="t" 
+          class="inline-flex items-center gap-1.5 text-xs text-gray-400 border border-white/10 px-2 py-1 rounded-full bg-black/20"
+        >
+          <img 
+            v-if="getTechIcon(t)"
+            :src="getTechIcon(t)" 
+            :alt="t"
+            class="w-3 h-3"
+            onerror="this.style.display='none'"
+          />
+          {{ t }}
+        </span>
+        <span 
+          v-if="project.tech.length > 4"
           class="text-xs text-gray-500 border border-white/10 px-2 py-1 rounded-full bg-black/20"
         >
-          {{ t }}
+          +{{ project.tech.length - 4 }}
         </span>
       </div>
 

@@ -1,5 +1,5 @@
 <script setup>
-import { personalInfo, projects, awards, contacts } from '../data/content.js'
+import { personalInfo, personalProjects, teamProjects, awards, contacts } from '../data/content.js'
 import { 
   CodeBracketIcon, 
   TrophyIcon, 
@@ -7,8 +7,11 @@ import {
   EnvelopeIcon,
   GlobeAltIcon,
   PlayCircleIcon,
-  CommandLineIcon
+  CommandLineIcon,
+  UserIcon,
+  UsersIcon
 } from '@heroicons/vue/24/outline'
+import { ref } from 'vue'
 import favicon from '@/assets/zico.svg'
 
 useHead({
@@ -20,6 +23,9 @@ useHead({
     { rel: 'icon', type: 'image/svg+xml', href: favicon }
   ]
 })
+
+// Active tab for project categories
+const activeProjectTab = ref('personal')
 </script>
 
 <template>
@@ -33,21 +39,58 @@ useHead({
 
     <AppNavbar />
 
-    <main class="relative z-10 pt-24 pb-20 px-4 md:px-6">
-      <div class="max-w-7xl mx-auto space-y-32">
+    <main class="relative z-10 pt-20 md:pt-24 pb-12 md:pb-20 px-4 md:px-6">
+      <div class="max-w-7xl mx-auto space-y-12 md:space-y-32">
         
       
         <HeroSection />
         <AboutSection />
 
         <section id="projects" class="scroll-mt-32">
-          <div class="flex items-center justify-between mb-10">
+          <div class="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6">
             <h2 class="font-heading text-3xl md:text-4xl font-bold">Featured <span class="text-zico-primary">Projects</span></h2>
+            
+            <!-- Category Tabs -->
+            <div class="flex gap-2 p-1 bg-white/5 rounded-xl border border-white/10 w-full sm:w-auto">
+              <button 
+                @click="activeProjectTab = 'personal'"
+                class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300"
+                :class="activeProjectTab === 'personal' 
+                  ? 'bg-zico-primary text-white shadow-lg shadow-zico-primary/30' 
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'"
+              >
+                <UserIcon class="w-4 h-4" />
+                Personal
+              </button>
+              <button 
+                @click="activeProjectTab = 'team'"
+                class="flex-1 sm:flex-none flex items-center justify-center gap-2 px-4 py-2 rounded-lg font-medium text-sm transition-all duration-300"
+                :class="activeProjectTab === 'team' 
+                  ? 'bg-zico-primary text-white shadow-lg shadow-zico-primary/30' 
+                  : 'text-gray-400 hover:text-white hover:bg-white/5'"
+              >
+                <UsersIcon class="w-4 h-4" />
+                Team
+              </button>
+            </div>
           </div>
           
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Personal Projects -->
+          <div v-show="activeProjectTab === 'personal'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
              <ProjectCard 
-                v-for="(project, index) in projects" 
+                v-for="(project, index) in personalProjects" 
+                :key="project.id" 
+                :project="project"
+                v-motion
+                :initial="{ opacity: 0, y: 50 }"
+                :visible="{ opacity: 1, y: 0, transition: { delay: index * 100 } }"
+             />
+          </div>
+
+          <!-- Team Projects -->
+          <div v-show="activeProjectTab === 'team'" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+             <ProjectCard 
+                v-for="(project, index) in teamProjects" 
                 :key="project.id" 
                 :project="project"
                 v-motion
@@ -56,6 +99,9 @@ useHead({
              />
           </div>
         </section>
+
+        <!-- Experience Section -->
+        <ExperienceSection />
     
 
         <section id="awards" class="relative scroll-mt-32">
@@ -90,20 +136,20 @@ useHead({
                     Feel free to reach out or connect with me on these platforms.
                  </p>
                  
-                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                 <div class="flex flex-nowrap justify-center gap-2 md:gap-4">
                     <a 
                       v-for="contact in contacts" 
                       :key="contact.name" 
                       :href="contact.url"
                       target="_blank"
-                      class="flex flex-col md:flex-row items-center justify-center gap-3 px-4 py-4 rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-zico-primary/50 hover:scale-[1.02] transition-all duration-300 group"
+                      class="flex items-center justify-center gap-1.5 md:gap-3 px-3 md:px-6 py-2.5 md:py-4 rounded-lg md:rounded-xl bg-white/5 border border-white/5 hover:bg-white/10 hover:border-zico-primary/50 hover:scale-[1.02] transition-all duration-300 group"
                     >
                        <img 
                          :src="contact.icon" 
                          :alt="contact.name" 
-                         class="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity invert" 
+                         class="w-4 h-4 md:w-6 md:h-6 opacity-70 group-hover:opacity-100 transition-opacity invert" 
                        />
-                       <span class="font-medium text-gray-300 group-hover:text-white">{{ contact.name }}</span>
+                       <span class="font-medium text-xs md:text-base text-gray-300 group-hover:text-white">{{ contact.name }}</span>
                     </a>
                  </div>
               </div>

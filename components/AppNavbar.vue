@@ -36,7 +36,7 @@ onUnmounted(() => {
 
       <div class="hidden md:flex gap-10 items-center">
         <a 
-          v-for="item in ['About', 'Projects', 'Awards', 'Contact']" 
+          v-for="item in ['About', 'Projects', 'Experience', 'Awards', 'Contact']" 
           :key="item"
           :href="`#${item.toLowerCase()}`" 
           class="relative font-bold text-lg text-gray-300 hover:text-white transition-colors duration-300 group py-2"
