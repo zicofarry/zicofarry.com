@@ -38,6 +38,9 @@ const activeProjectTab = ref('personal')
     </div>
 
     <AppNavbar />
+    
+    <!-- Interactive Terminal (Desktop Only) -->
+    <TerminalShell />
 
     <main class="relative z-10 pt-20 md:pt-24 pb-12 md:pb-20 px-4 md:px-6">
       <div class="max-w-7xl mx-auto space-y-12 md:space-y-32">
