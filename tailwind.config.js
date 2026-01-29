@@ -22,8 +22,10 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
-        heading: ['Outfit', 'sans-serif'], // Font heading modern
-        mono: ['JetBrains Mono', 'monospace'], // Terminal/code font
+        heading: ['Space Grotesk', 'sans-serif'],
+        logo: ['Unbounded', 'sans-serif'], // Premium bold logo font
+        navlogo: ['Orbitron', 'sans-serif'], // Futuristic navbar font
+        mono: ['Fira Code', 'monospace'],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

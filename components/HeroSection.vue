@@ -100,7 +100,7 @@ const codeLines = [
         :initial="{ opacity: 0, y: 30 }"
         :enter="{ opacity: 1, y: 0, transition: { delay: 200 } }"
       >
-        <h1 class="glitch font-heading text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black" data-text="zicofarry">
+        <h1 class="glitch font-logo text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight" data-text="zicofarry">
           <span class="text-white">zico</span><span class="text-zico-primary">farry</span>
         </h1>
         <p class="text-gray-500 text-sm md:text-base mt-2 font-mono">Muhammad 'Azmi Salam</p>

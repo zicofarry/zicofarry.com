@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@500;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+/* Fonts loaded via nuxt.config.js head */
 
 @tailwind base;
 @tailwind components;
@@ -6,7 +6,24 @@
 
 body {
     @apply bg-zico-dark text-white selection:bg-zico-primary selection:text-white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-heading {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+code,
+pre,
+.font-mono {
+    font-family: 'Fira Code', monospace;
 }
 
 /* Pattern Grid ala Dinamik */

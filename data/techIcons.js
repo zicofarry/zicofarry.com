@@ -49,11 +49,22 @@ export const techIcons = {
     "JWT Auth": "https://cdn.simpleicons.org/jsonwebtokens/white",
     "JWT": "https://cdn.simpleicons.org/jsonwebtokens/white",
     "Axios": "https://cdn.simpleicons.org/axios/5A29E4",
+    "Postman": "https://cdn.simpleicons.org/postman/FF6C37",
+    "Docker": "https://cdn.simpleicons.org/docker/2496ED",
+
+    // Deployment & Hosting
+    "Railway": "https://cdn.simpleicons.org/railway/white",
+    "Vercel": "https://cdn.simpleicons.org/vercel/white",
+    "Hostinger": "https://cdn.simpleicons.org/hostinger/673DE6",
+    "Itch.io": "https://cdn.simpleicons.org/itchdotio/FA5C5C",
 
     // AI & ML
     "Google Gemini": "https://cdn.simpleicons.org/googlegemini/8E75B2",
     "Gemini API": "https://cdn.simpleicons.org/googlegemini/8E75B2",
     "SQLAlchemy": "https://cdn.simpleicons.org/sqlalchemy/D71F00",
+
+    // SQL (generic for certified)
+    "SQL": "https://cdn.simpleicons.org/mysql/4479A1",
 
     // Architecture & Concepts (using relevant icons with light colors)
     "MVP Architecture": "https://cdn.simpleicons.org/blueprint/137CBD",

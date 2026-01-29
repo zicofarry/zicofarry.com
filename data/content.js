@@ -3,7 +3,7 @@ export const personalInfo = {
     role: "Computer Science Student",
     university: "Education University of Indonesia",
     shortBio: "Transforming complex problems into secure, elegant web solutions. I blend modern web development with a security-first mindset to build applications that are robust and user-centric.",
-    about: "I'm a college student currently in my 4th semester, majoring in Computer Science. I specialize in cryptography but I'm also deeply into low-level programming (reverse engineering). I enjoy writing code that is clean, minimal, and efficient—code that's easy to maintain and flexible. Always looking to grow in software architecture, AI, and machine learning. I love working in driven, collaborative teams committed to building something meaningful.",
+    about: "I'm a college student currently in my 4th semester, majoring in Computer Science. I specialize in cryptography but I'm also deeply into low-level programming (reverse engineering). I enjoy writing code that is clean, minimal, and efficient code that's easy to maintain and flexible. Always looking to grow in software architecture, AI, and machine learning. I love working in driven, collaborative teams committed to building something meaningful.",
     email: "mhmmdzmslm36@gmail.com",
     cvLink: "#"
 };
@@ -14,7 +14,7 @@ export const skills = {
         { name: "C Language", cert: "https://www.hackerrank.com/certificates/iframe/cc2cf7caa607" },
         { name: "C++", cert: "https://www.hackerrank.com/certificates/iframe/cc2cf7caa607" },
         { name: "Python", cert: "https://www.hackerrank.com/certificates/iframe/2e54b1ee8257" },
-        { name: "MySQL", cert: "https://www.hackerrank.com/certificates/iframe/40a329fe72e1" },
+        { name: "SQL", cert: "https://www.hackerrank.com/certificates/iframe/40a329fe72e1" },
 
         // Not certified yet
         { name: "Java", cert: null },
@@ -28,6 +28,7 @@ export const skills = {
         { name: "FastAPI", cert: null },
         { name: "Node.js", cert: null },
         { name: "Laravel", cert: null },
+        { name: "Postman", cert: null },
 
         { name: "Vue.js", cert: null },
         { name: "Nuxt.js", cert: null },
@@ -36,9 +37,17 @@ export const skills = {
         { name: "React Native", cert: null },
 
         { name: "PostgreSQL", cert: null },
+        { name: "MySQL", cert: null },
         { name: "MongoDB", cert: null },
         { name: "SQLite", cert: null },
+
         { name: "Git", cert: null },
+        { name: "Docker", cert: null },
+        { name: "Railway", cert: null },
+        { name: "Vercel", cert: null },
+        { name: "Hostinger", cert: null },
+        { name: "Expo", cert: null },
+        { name: "Itch.io", cert: null },
     ],
     exploring: [
         "Cyber Security (Cryptography)",
@@ -81,14 +90,14 @@ export const experiences = [
         id: 2,
         title: "Practicum Assistant of Data Structures",
         organization: "Computer Science, Education University of Indonesia",
-        period: "Feb 2026 - Now",
+        period: "Feb 2026 - Present",
         description: "Taught 88 students about data structures, including pointers, memory allocation, lists, queues, stacks, trees, and graphs."
     },
     {
         id: 3,
         title: "Practicum Assistant of Computer Networks & Operating Systems",
         organization: "Computer Science, Education University of Indonesia",
-        period: "Sep 2025 - Now",
+        period: "Sep 2025 - Present",
         description: "Taught 88 students computer networking using Cisco Packet Tracer and provided an introduction to basic Linux commands."
     }
 ];
