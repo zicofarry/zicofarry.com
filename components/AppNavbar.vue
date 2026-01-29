@@ -10,29 +10,61 @@ const logoZico = ref('zico')
 const logoFarry = ref('farry')
 const hackerChars = '!@#$%^&*<>[]{}01'
 let scrambleInterval = null
+let isHolding = false
+let hasClicked = false // For desktop: prevents scramble after click until mouseleave
+
+const runScramble = () => {
+  logoZico.value = 'zico'.split('').map(() => 
+    hackerChars[Math.floor(Math.random() * hackerChars.length)]
+  ).join('')
+  logoFarry.value = 'farry'.split('').map(() => 
+    hackerChars[Math.floor(Math.random() * hackerChars.length)]
+  ).join('')
+}
 
 const startScramble = () => {
+  // Desktop: don't start if already clicked (waiting for mouseleave)
+  if (hasClicked) return
+  
+  if (scrambleInterval) clearInterval(scrambleInterval)
+  isHolding = true
   let iterations = 0
+  
   scrambleInterval = setInterval(() => {
-    logoZico.value = 'zico'.split('').map((c, i) => 
-      i < iterations / 3 ? 'zico'[i] : hackerChars[Math.floor(Math.random() * hackerChars.length)]
-    ).join('')
-    logoFarry.value = 'farry'.split('').map((c, i) => 
-      i < iterations / 3 ? 'farry'[i] : hackerChars[Math.floor(Math.random() * hackerChars.length)]
-    ).join('')
-    iterations++
-    if (iterations > 15) {
-      clearInterval(scrambleInterval)
-      logoZico.value = 'zico'
-      logoFarry.value = 'farry'
+    if (isHolding && !hasClicked) {
+      runScramble()
+    } else {
+      // Decode back to original
+      logoZico.value = 'zico'.split('').map((c, i) => 
+        i < iterations / 3 ? 'zico'[i] : hackerChars[Math.floor(Math.random() * hackerChars.length)]
+      ).join('')
+      logoFarry.value = 'farry'.split('').map((c, i) => 
+        i < iterations / 3 ? 'farry'[i] : hackerChars[Math.floor(Math.random() * hackerChars.length)]
+      ).join('')
+      iterations++
+      if (iterations > 15) {
+        clearInterval(scrambleInterval)
+        scrambleInterval = null
+        logoZico.value = 'zico'
+        logoFarry.value = 'farry'
+      }
     }
   }, 40)
 }
 
 const stopScramble = () => {
-  if (scrambleInterval) clearInterval(scrambleInterval)
-  logoZico.value = 'zico'
-  logoFarry.value = 'farry'
+  isHolding = false
+  hasClicked = false // Reset on mouseleave so next enter can scramble
+}
+
+const clickScramble = () => {
+  // Desktop: click stops scramble immediately
+  hasClicked = true
+  isHolding = false
+}
+
+const scrollToTop = () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' })
 }
 
 const navItems = [
@@ -96,11 +128,13 @@ onUnmounted(() => {
       
       <!-- Logo with Hacker Animation -->
       <a 
-        href="#home" 
+        href="#" 
         class="group relative" 
-        @click="activeSection = 'home'"
+        @click.prevent="activeSection = 'home'; clickScramble(); scrollToTop()"
         @mouseenter="startScramble"
         @mouseleave="stopScramble"
+        @touchstart="startScramble"
+        @touchend="stopScramble"
       >
         <span class="font-heading font-bold text-xl md:text-2xl tracking-wide text-glow">
           <span class="text-white group-hover:text-zico-primary transition-colors duration-300">{{ logoZico }}</span><span class="text-zico-primary">{{ logoFarry }}</span>
@@ -114,13 +148,13 @@ onUnmounted(() => {
       </a>
 
       <!-- Desktop Nav with Active State -->
-      <div class="hidden md:flex gap-8 items-center">
+      <div class="hidden md:flex gap-10 items-center">
         <a 
           v-for="item in navItems" 
           :key="item.id"
           :href="`#${item.id}`" 
           @click="activeSection = item.id"
-          class="relative font-medium text-sm tracking-wide py-2 transition-all duration-300 group"
+          class="relative font-medium text-base tracking-wide py-2 transition-all duration-300 group"
           :class="activeSection === item.id ? 'text-zico-primary' : 'text-gray-400 hover:text-white'"
         >
           {{ item.name }}
